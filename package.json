@@ -1,0 +1,31 @@
+{
+  "name": "@creowis/intl-date-utils",
+  "version": "1.0.0",
+  "description": "Lightweight date utilities powered by the JavaScript Intl API",
+  "type": "module",
+  "main": "./dist/dateUtils.js",
+  "exports": {
+    ".": "./dist/dateUtils.js"
+  },
+  "scripts": {
+    "build": "node build.js",
+    "test": "node --test",
+    "prepare": "npm run build"
+  },
+  "types": "./index.d.ts",
+  "keywords": [
+    "intl",
+    "date",
+    "javascript",
+    "i18n",
+    "timezone",
+    "creowis"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "esbuild": "^0.21.0"
+  }
+}
