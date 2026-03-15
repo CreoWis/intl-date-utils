@@ -12,3 +12,9 @@ Date: 15th March 2026
 **Changes**
 - Added Package.json configuration information
 - Added the Change logs
+
+## `1.0.2`
+Date: 15th March 2026
+
+**Changes**
+- Fixed: https://github.com/CreoWis/intl-date-utils/issues/6
