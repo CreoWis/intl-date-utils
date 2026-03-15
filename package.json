@@ -1,6 +1,6 @@
 {
   "name": "@creowis/intl-date-utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Lightweight date utilities powered by the JavaScript Intl API",
   "type": "module",
   "main": "./dist/dateUtils.js",
@@ -12,6 +12,10 @@
     "test": "node --test",
     "prepare": "npm run build"
   },
+   "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CreoWis/intl-date-utils.git"
+  },
   "types": "./index.d.ts",
   "keywords": [
     "intl",
@@ -21,11 +25,19 @@
     "timezone",
     "creowis"
   ],
+  "author": "CreoWis",
   "license": "MIT",
   "engines": {
     "node": ">=18"
   },
+   "bugs": {
+    "url": "https://github.com/CreoWis/intl-date-utils/issues"
+  },
+  "homepage": "https://github.com/CreoWis/intl-date-utils#readme",
   "devDependencies": {
     "esbuild": "^0.21.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
