@@ -36,15 +36,15 @@ function getFormatter(locale, options) {
 // Core Formatting Utilities
 // ─────────────────────────────────────────────
 
-export function formatDate(date, locale = "en-US", style = "medium") {
+function formatDate(date, locale = "en-US", style = "medium") {
   return getFormatter(locale, { dateStyle: style }).format(toDate(date))
 }
 
-export function formatTime(date, locale = "en-US", style = "short") {
+function formatTime(date, locale = "en-US", style = "short") {
   return getFormatter(locale, { timeStyle: style }).format(toDate(date))
 }
 
-export function formatDateTime(date, locale = "en-US", options = {}) {
+function formatDateTime(date, locale = "en-US", options = {}) {
   const { dateStyle = "medium", timeStyle = "short", timeZone } = options
 
   return getFormatter(locale, {
@@ -54,7 +54,7 @@ export function formatDateTime(date, locale = "en-US", options = {}) {
   }).format(toDate(date))
 }
 
-export function formatInTimezone(date, timeZone, locale = "en-US") {
+function formatInTimezone(date, timeZone, locale = "en-US") {
   return getFormatter(locale, {
     dateStyle: "long",
     timeStyle: "short",
@@ -67,7 +67,7 @@ export function formatInTimezone(date, timeZone, locale = "en-US") {
 // Useful for cross-timezone comparisons
 // ─────────────────────────────────────────────
 
-export function toLocaleDateISO(date, timeZone = "UTC") {
+function toLocaleDateISO(date, timeZone = "UTC") {
   const fmt = getFormatter("en-CA", {
     year: "numeric",
     month: "2-digit",
@@ -108,7 +108,7 @@ const RELATIVE_UNITS = [
   ["second", 1]
 ]
 
-export function timeAgo(date, locale = "en") {
+function timeAgo(date, locale = "en") {
   const diffSeconds = (toDate(date).getTime() - Date.now()) / 1000
   const abs = Math.abs(diffSeconds)
 
@@ -127,7 +127,7 @@ export function timeAgo(date, locale = "en") {
 // Calendar Helpers
 // ─────────────────────────────────────────────
 
-export function getMonthNames(locale = "en-US", style = "long") {
+function getMonthNames(locale = "en-US", style = "long") {
   const fmt = getFormatter(locale, { month: style })
 
   return Array.from({ length: 12 }, (_, i) =>
@@ -135,7 +135,7 @@ export function getMonthNames(locale = "en-US", style = "long") {
   )
 }
 
-export function getDayNames(locale = "en-US", style = "long", startDay = 0) {
+function getDayNames(locale = "en-US", style = "long", startDay = 0) {
   const fmt = getFormatter(locale, { weekday: style })
 
   return Array.from({ length: 7 }, (_, i) =>
@@ -147,7 +147,7 @@ export function getDayNames(locale = "en-US", style = "long", startDay = 0) {
 // Date Range Formatting
 // ─────────────────────────────────────────────
 
-export function formatRange(start, end, locale = "en-US", style = "long") {
+function formatRange(start, end, locale = "en-US", style = "long") {
   const fmt = getFormatter(locale, { dateStyle: style })
 
   return fmt.formatRange(toDate(start), toDate(end))
@@ -165,18 +165,18 @@ function sameCalendarDate(a, b) {
   )
 }
 
-export function isToday(date) {
+function isToday(date) {
   return sameCalendarDate(toDate(date), new Date())
 }
 
-export function isYesterday(date) {
+function isYesterday(date) {
   const today = startOfDay(new Date())
   const yesterday = addDays(today, -1)
 
   return sameCalendarDate(toDate(date), yesterday)
 }
 
-export function isTomorrow(date) {
+function isTomorrow(date) {
   const today = startOfDay(new Date())
   const tomorrow = addDays(today, 1)
 
@@ -187,31 +187,31 @@ export function isTomorrow(date) {
 // Date Math Utilities
 // ─────────────────────────────────────────────
 
-export function startOfDay(date) {
+function startOfDay(date) {
   const d = toDate(date)
   return new Date(d.getFullYear(), d.getMonth(), d.getDate())
 }
 
-export function endOfDay(date) {
+function endOfDay(date) {
   const d = toDate(date)
   return new Date(d.getFullYear(), d.getMonth(), d.getDate(), 23, 59, 59, 999)
 }
 
-export function addDays(date, amount) {
+function addDays(date, amount) {
   const d = toDate(date)
   const result = new Date(d)
   result.setDate(result.getDate() + amount)
   return result
 }
 
-export function addMonths(date, amount) {
+function addMonths(date, amount) {
   const d = toDate(date)
   const result = new Date(d)
   result.setMonth(result.getMonth() + amount)
   return result
 }
 
-export function differenceInDays(a, b) {
+function differenceInDays(a, b) {
   const diff =
     startOfDay(toDate(a)).getTime() - startOfDay(toDate(b)).getTime()
 
@@ -222,7 +222,7 @@ export function differenceInDays(a, b) {
 // ISO Parsing
 // ─────────────────────────────────────────────
 
-export function parseISO(value) {
+function parseISO(value) {
   const d = new Date(value)
 
   if (Number.isNaN(d.getTime())) {
@@ -237,7 +237,7 @@ export function parseISO(value) {
 // Perfect for feeds / dashboards
 // ─────────────────────────────────────────────
 
-export function formatSmartDate(date, locale = "en-US") {
+function formatSmartDate(date, locale = "en-US") {
   const d = toDate(date)
 
   if (isToday(d)) {
@@ -256,3 +256,25 @@ export function formatSmartDate(date, locale = "en-US") {
 
   return formatDate(d, locale, "medium")
 }
+
+export {
+  addDays,
+  addMonths,
+  differenceInDays,
+  endOfDay,
+  formatDate,
+  formatDateTime,
+  formatInTimezone,
+  formatRange,
+  formatSmartDate,
+  formatTime,
+  getDayNames,
+  getMonthNames,
+  isToday,
+  isTomorrow,
+  isYesterday,
+  parseISO,
+  startOfDay,
+  timeAgo,
+  toLocaleDateISO
+};
