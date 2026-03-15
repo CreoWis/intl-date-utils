@@ -145,8 +145,8 @@ If you found the project helpful, consider supporting us with a ☕
     <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50px">
 </a>
 
-## Change Logs
-Read about changes here:[CHANGE LOGS](./CHANGE_LOGS.md)
+## Change Log
+Read about changes here:[CHANGE LOG](./CHANGE_LOG.md)
 
 ## Contributors ✨
 
