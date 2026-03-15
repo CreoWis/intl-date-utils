@@ -127,6 +127,10 @@ npm publish --access public
 
 [MIT](./LICENSE)
 
+## Change Log
+
+[CHANGE LOG](./CHANGE_LOG.md)
+
 ## 🤝 Contributing
 
 Contributions are always welcome!
@@ -144,9 +148,6 @@ If you found the project helpful, consider supporting us with a ☕
 <a href="https://www.buymeacoffee.com/creowis">
     <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50px">
 </a>
-
-## Change Log
-Read about changes here:[CHANGE LOG](./CHANGE_LOG.md)
 
 ## Contributors ✨
 
