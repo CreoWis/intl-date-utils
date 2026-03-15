@@ -127,6 +127,10 @@ npm publish --access public
 
 [MIT](./LICENSE)
 
+## Change Log
+
+[CHANGE LOG](./CHANGE_LOG.md)
+
 ## 🤝 Contributing
 
 Contributions are always welcome!
