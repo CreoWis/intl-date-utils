@@ -20,26 +20,26 @@ Features:
 Using NPM
 
 ```bash
-npm install intl-date-utils
+npm install @creowis/intl-date-utils
 ```
 
 Using Yarn
 
 ```bash
-yarn add intl-date-utils
+yarn add @creowis/intl-date-utils
 ```
 
 Using Pnpm
 
 ```bash
-pnpm install intl-date-utils
+pnpm install @creowis/intl-date-utils
 ```
 
 
 ## Usage
 
 ```js
-import { formatDate, timeAgo } from 'intl-date-utils'
+import { formatDate, timeAgo } from '@creowis/intl-date-utils'
 
 formatDate(new Date())
 timeAgo(new Date(Date.now() - 86400000))
