@@ -1,6 +1,6 @@
 {
   "name": "@creowis/intl-date-utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Lightweight date utilities powered by the JavaScript Intl API",
   "type": "module",
   "main": "./dist/dateUtils.js",
