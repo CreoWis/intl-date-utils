@@ -145,6 +145,9 @@ If you found the project helpful, consider supporting us with a ☕
     <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50px">
 </a>
 
+## Change Logs
+Read about changes here:[CHANGE LOGS](./CHANGE_LOGS.md)
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
